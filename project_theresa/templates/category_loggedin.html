@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+    <link type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet">
+    <title>Item Catalog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="273624087002-k6ibt586pv2tclp88ujjeno2gcuvgief.apps.googleusercontent.com">
+
+</head>
+
+<div class="header">
+    <h1>Item Catalog</h1>
+    <p>Click on the categories to see items contained in the category.</p>
+</div>
+
+{% if loggedin == False%}
+<!--/*make variable here */ -->
+<div class="topnav">
+        <p><a href=/category/all>All Categories</a></p>
+        <p><a href=/login/>Login</a></p>
+</div>
+
+{% else %}
+
+<div class="topnav">
+    <p><a href=/items/new >New Item</a></p>
+    <p><a href=/category/all>All Categories</a></p>
+    <p><a href=/logout/>Logout</a></p>
+</div>
+
+{% endif %}
+
+
+<div class="parent">
+  <h1>Categories</h1>
+</div>
+
+{% for i in categories %}
+
+
+<div class="parent">
+    <h2><a href=/category/{{i.name}}/items/ >{{i.name}}</a></h2>
+</div>
+
+
+{% endfor %}
+
+{% if catname != None%}
+
+    {% if numitems == 1 %}
+    <div class="center-this">
+    <h1>{{catname}} with {{numitems}} Item</h1>
+     </div>
+    {% else %}
+    <div class="center-this">
+    <h1>{{catname}} with {{numitems}} Items</h1>
+    </div>
+    {% endif %}
+
+    {% for x in items %}
+    <div class="center-this">
+    <h2><a href=/category/{{catname}}/item/{{x.id}}/description/ >{{x.name}}</a></h2>
+    </div>
+    {% endfor %}
+
+{% else %}
+
+    <div class="center-this">
+    <h1>Latest Items</h1>
+    </div>
+
+    {% for x in latestitems %}
+    <div class="center-this">
+        <h2><a href=/category/{{x[1].name}}/item/{{x[0].id}}/description/>{{x[0].name}} ({{x[1].name}})</a></h2>
+    </div>
+
+{% endfor %}
+{% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+  <link type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet">
+  <title>Item Catalog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+<body>
+
+  <div class="header">
+  <h1 class="sansserif">Item Catalog</h1>
+  <p class="sansserif">Description of the item.</p>
+  </div>
+
+  {% if loggedin == True%}
+  <div class="topnav">
+  <p><a href=/items/new >New Item</a></p>
+  <p><a href=/category/all>All Categories</a></p>
+    <div class="button" id="category-signout"><a href=/logout/><label>Logout</label></a>
+  </div>
+  </div>
+
+  {% else %}
+  <div class="topnav">
+  <p><a href=/category/all>All Categories</a></p>
+  {% endif %}
+
+  </div>
+  <div class="parent">
+  <h1>{{name}}</h1>
+  </div>
+
+  <div class="parent">
+  <p>{{description}}</p><br/>
+
+
+  {% if loggedin == True%}
+    <p><a href=/category/{{catid}}/item/{{item_id}}/edit/ >Edit</a></p>
+    <p><a href=/category/{{catid}}/item/{{item_id}}/delete/ >Delete</a></p>
+  {% endif %}
+
+     </div>
+
+</body>
+

@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+    <link type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet">
+    <title>Item Catalog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1 class="sansserif">Item Catalog</h1>
+    <p class="sansserif">Delete an item.</p>
+</div>
+
+<div class="topnav">
+    <p class="sansserif"><a href=/items/new >New Item</a></p>
+    <p class="sansserif"><a href=/category/all>All Categories</a></p><br/>
+</div>
+
+<div class="parent">
+    <h1 class="sansserif">Delete {{name}}</h1>
+</div>
+
+<div class="parent">
+    <p class="sansserif">Delete the item without an ability to undo this operation.</p>
+    <form method="post">
+    <input type="submit" value="Delete item">
+    </form>
+</div>
+
+</body>
+

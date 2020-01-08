@@ -1,0 +1,68 @@
+<html>
+
+<style>
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+</style>
+
+  <link type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet">
+
+<div class="header">
+  <h1 class="sansserif">Item Catalog</h1>
+  <p class="sansserif">Provide data for a new category.</p>
+</div>
+
+<div class="topnav">
+  <p><a href=/category/all>All Categories</a></p>
+   <div class="button" id="category-signout"><a href=/logout/><label>Logout</label></a>
+</div>
+</div>
+
+<body>
+    <form method="post">
+        <input type="hidden" name="category_id" value="{{category_id}}">
+        <br/>
+        <p><label for="item">Please enter item name here : </label></p>
+        <input type=text name="name">
+      <br/>
+        <p ><label for="item">Please enter item description here : </label></p>
+        <input type=text name="description">
+      <br/>
+         <p ><label for="item">Please enter item price here : </label></p>
+        <input type=text name="price">
+      <br/>
+        <p ><label for="item">Please enter item price here : </label></p>
+        <select name="category" method="GET" action="/"><br/>
+            {% for c in categories %}
+        <option value="{{c.name}}" SELECTED>{{c.name}}</option>"
+            {% endfor %}
+
+        </select>
+        {% if new == True %}
+        <input type="submit" value="Submit new item">
+        {% else %}
+        <input type="submit" value="Submit edit item">
+        {% endif %}
+      <br/>
+
+  </form>
+</body>
+</html>

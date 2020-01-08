@@ -1,0 +1,272 @@
+ in call back localhost:8000:194:8
+Object { code: "4/vAHZIg541Yg5szSSm6kGoPsPzOZHWFySgiAR-JiAMy2gl8g0KRaTZ5g6n2d0SQurwwavujd5NlsFEUOWCEYM3-E" }
+localhost:8000:195:7
+hide signin button localhost:8000:197:7
+OTA app install is no longer supported. cb=gapi.loaded_0:158:159
+in call back localhost:8000:194:8
+Object { token_type: "Bearer", access_token: "ya29.Il-4Bws_7ptc2KgQbq_Ra30WkJpH6r2Q7nb9nTt2Cz2Ra0K4jTJGLv8URqra0XwKIxto8YP8denSV_URY-cIRLnjv2w3WUQ1__cT8Udb5TTqmdus1r_w1PQ09pJNcwZk1g", scope: "email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", login_hint: "AJDLj6JUa8yxXrhHdWRHIV0S13cALZWu0F3w3qzzMxWO_ISVud3u5iSQ2m89o97egcKJo7Bc1SW0aq5aTb4eKIvBBgCKQAuONA", expires_in: "3600", id_token: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ3NDU2YjgwNjllNDM2NWU1MTdjYTVlMjk3NTdkMWE5ZWZhNTY3YmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiMjczNjI0MDg3MDAyLWs2aWJ0NTg2cHYydGNscDg4dWpqZW5vMmdjdXZnaWVmLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMjczNjI0MDg3MDAyLWs2aWJ0NTg2cHYydGNscDg4dWpqZW5vMmdjdXZnaWVmLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA0NjcwNzc4NTcwODIwODY1MzA3IiwiZW1haWwiOiJ0aGVyZXNhLmZydWh3dWVydGhAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJnSkhjNlVMSWQybGZVUHQ3cHVkOFNnIiwiaWF0IjoxNTc3OTA4MzA3LCJleHAiOjE1Nzc5MTE5MDcsImp0aSI6ImEwZTdjOWE5YTg2ZDg3ZjUzNTZhOTlkMzJhYmVkOGYwNDE2NzdmZTUifQ.W1LILAFsAAnPDq0w5cPi2Tk2f6P89J4Z__VFyodqg6p62Z41i5uh3rM7dZKLb3NqGTGV6oGNE7_norfptySiKP6V45JapXvgBxJMGx9-2-yo20-ic7ZtcSJMiLyeo5rVBG99sqHVXvK6JR3_unhTrO1MvD1FctWuqJT3IV11Bt0WuTNppd2RaHXV1vljnzGvps-g8lz4hJTvVnJiYqI1prJ4520SwXZCWL6CnJaqnYAY6_IRuwdJcwRi8uHC1NEL4rK1iuv5a1Hv46ZMs0xuNdpLjjFKb_8aaYSvFGAEpX7a9H52IV74TUm1-GZ3ShLStUI8-wNc7EP01M47BMyxEA", session_state: null, expires_at: "1577911907", code: "4/vAGW60RC3HImItbiRHJ960w786M_Y03ZFYhI_IquRqvPVfgA8vZ4BoDJccqzsG6pRXHgH8FOZF9TjMtPAHdcoBE", status: {…}, … }
+localhost:8000:195:7
+hide signin button
+
+
+CSI/tbsd_ cb=gapi.loaded_0:734:127
+CSI/_tbnd cb=gapi.loaded_0:734:127
+Content Security Policy: Ignorieren von "'unsafe-inline'" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "https:" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "http:" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "'unsafe-inline'" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "https:" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "http:" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "'unsafe-inline'" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "https:" innerhalb script-src: 'strict-dynamic' angegeben
+Content Security Policy: Ignorieren von "http:" innerhalb script-src: 'strict-dynamic' angegeben
+in call back logout:194:8
+Object { code: "4/vAF2hoVvuTyjJoFD4TY-LgRkvH3XfCS83xFvZOu_deBzeMaLKWf2gc4f0okLRW3utpWggGHn0K5csCkg8CPvRHM" }
+logout:195:7
+hide signin button logout:197:7
+<html>
+
+<head>
+
+    <link type="text/css" href="/static/styles/styles.css" rel="stylesheet">
+    <title>Item Catalog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="273624087002-k6ibt586pv2tclp88ujjeno2gcuvgief.apps.googleusercontent.com">
+
+</head>
+
+<body>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+  </script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+  </script>
+<!--/*make variable here */ -->
+   <script>
+
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: '273624087002-k6ibt586pv2tclp88ujjeno2gcuvgief.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+
+      </script>
+
+  </head>
+
+
+<div class="header">
+  <h1>Item Catalog</h1>
+  <p>Click on the categories to see items contained in the category.</p>
+</div>
+
+
+
+<div class="topnav">
+  <p><a href=/items/new >New Item</a></p>
+  <p><a href=/category/all>All Categories</a></p>
+   <div class="button" id="category-signout"><a href=/logout/><label>Logout</label></a>
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="parent">
+
+  <h1>Categories</h1>
+</div>
+
+
+
+
+  <div class="parent">
+
+<h2><a href=/category/Running/items/ >Running</a></h2>
+
+
+</div>
+
+
+
+
+
+  <div class="parent">
+
+<h2><a href=/category/Hiking/items/ >Hiking</a></h2>
+
+
+</div>
+
+
+
+
+
+  <div class="parent">
+
+<h2><a href=/category/Football/items/ >Football</a></h2>
+
+
+</div>
+
+
+
+
+
+  <div class="parent">
+
+<h2><a href=/category/Baseball/items/ >Baseball</a></h2>
+
+
+</div>
+
+
+
+
+
+  <div class="parent">
+
+<h2><a href=/category/Skiing/items/ >Skiing</a></h2>
+
+
+</div>
+
+
+
+
+
+
+    <div class="center-this">
+    <h1>Latest Items</h1>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Skiing/item/54/description/>Snowboard (Skiing)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Hiking/item/53/description/>Hiking shoes (Hiking)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Football/item/52/description/>Ball (Football)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Hiking/item/51/description/>Hiking poles (Hiking)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Skiing/item/50/description/>Skiing Trouser (Skiing)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Running/item/49/description/>Shoes (Running)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Hiking/item/46/description/>Shirt (Hiking)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Hiking/item/45/description/>Shirt blue (Hiking)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Baseball/item/41/description/>Trouser (Baseball)</a></h2>
+    </div>
+
+
+    <div class="center-this">
+        <h2><a href=/category/Baseball/item/40/description/>Shirt (Baseball)</a></h2>
+    </div>
+
+
+
+
+<script>
+
+
+  $('#category-signin').click(function() {
+    // on click use signin callback
+    auth2.grantOfflineAccess().then(signInCallback);
+  });
+
+
+    function signInCallback(authResult) {
+       console.log('in call back');
+      console.log(authResult);
+      if (authResult['code']) {
+      console.log('hide signin button');
+    // Send the one-time-use authorization code to the server,
+    // the server then exchanges the code for its own token to use for offline API access
+    //if the server responds, write a 'login successful' message to the web page
+    // and then redirect back to the main categories page
+    $.ajax({
+      type: 'POST',
+      // anti forgery state
+      url: '/gconnect?state=',
+      processData: false,
+      // authorization code
+      data: authResult['code'],
+      contentType: 'application/octet-stream; charset=utf-8',
+      success: function(result) {
+        console.log(result)
+        // Handle or verify the server response if necessary.
+        if (result) {
+        console.log('success login');
+         // redirect after 4 seconds
+          $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+         setTimeout(function() {
+          window.location.href = "/category/";
+                          }, 4000);
+
+      } else if (authResult['error']) {
+      console.log('error')
+    console.log('There was an error: ' + authResult['error']);
+        } else {
+        console.log('failed call')
+        $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+         }
+      }
+
+  }); } }
+
+  function renderButton() {
+  // render custom google signin button
+      gapi.signin2.render('category-signin', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'light'
+      });
+    }
+
+  </script>
+
+
+
+
+</body>
+
+</html> logout:211:9
+success login
