@@ -28,15 +28,14 @@
       gapi.load('auth2', function() {
         auth2 = gapi.auth2.init({
           client_id: '273624087002-k6ibt586pv2tclp88ujjeno2gcuvgief.apps.googleusercontent.com',
-          // Scopes to request in addition to 'profile' and 'email'
-          //scope: 'additional_scope'
+
         });
       });
     }
 
 
   $(window).load(function() {
-    // on click use signin callback
+    // on window load use signin callback
     auth2.grantOfflineAccess().then(signInCallback);
   });
 
