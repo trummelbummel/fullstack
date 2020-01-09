@@ -100,7 +100,6 @@ def create_user(login_session):
 
 def get_user_info(user_id):
     session = create_session()
-    print(session)
     user = session.query(User).filter_by(
         id=user_id).first()
     close_session(session)
@@ -188,8 +187,6 @@ def gdisconnect():
     if not authorization.check_response(response_url):
         response = authorization.do_disconnect(response_url)
         if response.status_code == 200:
-            print('logging out')
-            print(authorization.check_login())
             latestitems = getLatestItems()
             categories = getCategories()
             category_id = None
@@ -234,10 +231,7 @@ def handleCallback_gconnect():
     Check whether
     :return:
     """
-    print('handling callback')
-    print(request.args)
     if authorization.validate_state_token(request):
-        print('state token validated')
         # Obtain authorization code
         code = request.data
         # get credentials
@@ -280,11 +274,9 @@ def handleCallback_gconnect():
                     return response
 
             else:
-                print('invalid response')
                 return response_validity
 
     else:
-        print('returning credentials')
         return response_credentials
 
 
@@ -292,9 +284,7 @@ def handleCallback_gconnect():
 def doLogin():
     """ show login page and create a anti forgery
     token for session identification """
-    print('STARTING LOGIN')
     STATE = authorization.createToken()
-    print(STATE)
     return render_template('login.html', STATE=STATE)
 
 
@@ -315,8 +305,6 @@ def showItems(latestitems, categories, category_id, STATE):
     passed show only the items in the category
     else show the latest items """
     if STATE:
-        print('rendering passing state')
-        print(STATE)
         return render_template('category_loggedin.html',
                                categories=categories,
                                items=[],

@@ -33,10 +33,6 @@ def validate_state_token(request):
     """
     :return: response
     """
-    print('request oargs')
-    print(request.data)
-    print(request.args.get('state'))
-    print(login_session['state'])
     if request.args.get('state') != login_session['state']:
         response = make_response(json.dumps(
             'session state not matching request state token'), 401)
@@ -55,14 +51,12 @@ def get_authorizationcode_credentials(code):
         # Upgrade the authorization code into a credentials object
         oauth_flow = flow_from_clientsecrets(
             'client_secret.json', scope='')
-
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
         return credentials
     except FlowExchangeError:
         response = make_response(
             json.dumps('Failed to upgrade the authorization code.'), 401)
-        print('failed to authorize code')
         response.headers['Content-Type'] = 'application/json'
         return response
 
@@ -108,7 +102,6 @@ def verify_access_token(result, gplus_id):
     """
 
     if result.get('user_id') != gplus_id:
-        print('token user id doesnt match')
         response = make_response(
             json.dumps("Token's user ID doesn't match given user ID.")
             , 401)
@@ -136,7 +129,6 @@ def verify_access_token_app(result):
 
 def check_connection(gplus_id):
     """ check whether login session already exists """
-    print('checking connection')
     stored_access_token = login_session.get('state')
     stored_gplus_id = login_session.get('gplus_id')
     if stored_access_token is not None and gplus_id == stored_gplus_id:
