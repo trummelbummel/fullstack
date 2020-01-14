@@ -484,6 +484,6 @@ def deleteItem(category_id, item_id):
 
 
 if __name__ == '__main__':
-    app.secret_key = '_6YKl3rbWo73lUgdRmUq8iEO'
+    app.secret_key = <yoursecretkey>
     app.debug = True
     app.run(host='0.0.0.0', port=8000)
