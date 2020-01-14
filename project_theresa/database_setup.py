@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 
 Base = declarative_base()
-engine = create_engine('sqlite:///itemcatalog.db')
+engine = create_engine("postgresql+psycopg2://catalog:catalog@127.0.0.1:5432/itemcatalog")
 
 
 class User(Base):

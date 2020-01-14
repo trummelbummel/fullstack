@@ -15,7 +15,7 @@ import random
 import string
 
 CLIENT_ID = json.loads(
-    open('client_secret.json', 'r').read())['web']['client_id']
+    open('/var/www/catalog/catalog/client_secret.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Category Menu Application"
 
 
@@ -90,7 +90,7 @@ def createToken():
     """ show login page and create a anti forgery
     token for session identification """
     state = ''.join(random.choice(string.ascii_uppercase +
-                                  string.digits) for x in xrange(32))
+                                  string.digits) for x in range(32))
     login_session["state"] = state
     return state
 

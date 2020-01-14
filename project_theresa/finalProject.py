@@ -15,7 +15,7 @@ from database_setup import Base, Category, Item, User
 app = Flask(__name__)
 
 # start database engine
-db_name = 'sqlite:///itemcatalog.db'
+db_name = "postgresql+psycopg2://catalog:catalog@127.0.0.1:5432/itemcatalog"
 engine = create_engine(db_name)
 Base.metadata.bind = engine
 
@@ -183,24 +183,15 @@ def getCategories():
 
 @app.route('/logout/', methods=['GET'])
 def gdisconnect():
-    response_url = authorization.disconnect_get_session_url()
-    if not authorization.check_response(response_url):
-        response = authorization.do_disconnect(response_url)
-        if response.status_code == 200:
-            latestitems = getLatestItems()
-            categories = getCategories()
-            category_id = None
-            state = None
-            return showItems(latestitems,
+        latestitems = getLatestItems()
+        categories = getCategories()
+        category_id = None
+        state = None
+        return showItems(latestitems,
                              categories,
                              category_id,
                              state)
-        if response.status_code == 401:
-            return response
-        else:
-            response
-    else:
-        return response_url
+
 
 
 def disconnect_get_session_url():
@@ -231,6 +222,7 @@ def handleCallback_gconnect():
     Check whether
     :return:
     """
+    print("getting response gconnect")
     if authorization.validate_state_token(request):
         # Obtain authorization code
         code = request.data
@@ -238,12 +230,15 @@ def handleCallback_gconnect():
         response_credentials = authorization\
             .get_authorizationcode_credentials(code)
         if isinstance(response_credentials, Credentials):
+            print("credentials")
+            print(response_credentials)
             response_validity = \
                 authorization.check_validity(
                     response_credentials)
             # if the app and user are verified
             # and the user is not already logged in
             if not authorization.check_response(response_validity):
+                print("authorizing response")
 
                 response_user = authorization.verify_access_token(
                     response_validity, response_credentials.id_token['sub'])
@@ -277,15 +272,16 @@ def handleCallback_gconnect():
                 return response_validity
 
     else:
+        print("returning credentials OK")
         return response_credentials
 
-
+#
 @app.route("/login/")
 def doLogin():
     """ show login page and create a anti forgery
     token for session identification """
-    STATE = authorization.createToken()
-    return render_template('login.html', STATE=STATE)
+#    STATE = authorization.createToken()
+    return redirect(url_for('showAllCategories'))
 
 
 @app.route("/", methods=["GET"])
@@ -324,7 +320,7 @@ def showItems(latestitems, categories, category_id, STATE):
                                catid=category_id,
                                numitems=numitems,
                                latestitems=latestitems,
-                               loggedin=authorization.check_login())
+                               loggedin=True)
     else:
         return render_template('category_loggedin.html',
                                categories=categories,
@@ -333,7 +329,7 @@ def showItems(latestitems, categories, category_id, STATE):
                                catid=None,
                                numitems=0,
                                latestitems=latestitems,
-                               loggedin=authorization.check_login())
+                               loggedin=True)
 
 @app.route("/category/<string:category_id>/item/<int:item_id>/description/",
            methods=["GET"])
@@ -346,7 +342,7 @@ def showDescription(category_id, item_id):
                            name=item_name,
                            catid=category_id,
                            item_id=item_id,
-                           loggedin=authorization.check_login())
+                           loggedin=True)
 
 
 @app.route("/category/<string:category_id>/item/<int:item_id>/edit/",
@@ -360,8 +356,7 @@ def editCategoryItem(category_id, item_id):
     :param item_id:
     :return:
     """
-    if not authorization.check_login():
-        return redirect(url_for('showAllCategories'))
+
     if request.method == 'GET':
         session = create_session()
         categories = session.query(Category).distinct(Category.name)
@@ -372,7 +367,6 @@ def editCategoryItem(category_id, item_id):
                             Category.name == category_id)\
                             .first()
             item = session.query(Item).filter(
-                                Item.user_id == login_session['user_id'],
                                 Item.category_id == c.id,
                                 Item.id == item_id).first()
             # if the person is the owner let him edit if not
@@ -410,7 +404,7 @@ def postNewItem(category_id, item_id):
     if item_id:
         # check whether the user owns the item
         item = session.query(Item)\
-            .filter(Item.user_id == login_session['user_id'],
+            .filter(Item.user_id == 5,
                     Item.category_id == original_c.id,
                     Item.id == item_id).first()
     else:
@@ -432,14 +426,14 @@ def postNewItem(category_id, item_id):
             Item.id.desc()).first()
         new_id = last_i.id + 1
         u = session.query(User)\
-            .filter_by(id=login_session['user_id']).first()
+            .filter_by(id=5).first()
         newItem = Item(
                         name=name,
                         id=new_id,
                         description=d,
                         price=p,
                         category=c,
-                        user_id=login_session['user_id'],
+                        user_id=5,
                         user=u)
         session.add(newItem)
     session.commit()
@@ -450,9 +444,6 @@ def postNewItem(category_id, item_id):
            methods=["GET", "POST"])
 def deleteItem(category_id, item_id):
     """ delete an item if authorized """
-
-    if not authorization.check_login():
-        return redirect(url_for('showAllCategories'))
 
     if request.method == 'GET':
         return render_template(
@@ -466,7 +457,6 @@ def deleteItem(category_id, item_id):
         # check whether the user owns the item
         items_user = session.query(Item)\
                             .filter(
-                                    Item.user_id == login_session['user_id'],
                                     Item.category == c,
                                     Item.id == item_id).all()
         if items_user:
@@ -484,6 +474,6 @@ def deleteItem(category_id, item_id):
 
 
 if __name__ == '__main__':
-    app.secret_key = <yoursecretkey>
+    app.secret_key = '_6YKl3rbWo73lUgdRmUq8iEO'
     app.debug = True
     app.run(host='0.0.0.0', port=8000)
