@@ -1,8 +1,13 @@
-#Readme Linux Server Configuration
+
+# Readme Linux Server Configuration
 
 The port on which you can access the server is: 80
 SSH port is : 2200 
 Put the servers Public IPv4 address and route: `3.20.105.201/catalog/` in your browser to access the application.
+
+```bash
+ssh -i <yourkey> -p 2200 <youruser>@ec2-3-20-105-201.us-east-2.compute.amazonaws.com
+```
 
 ***Dependencies:***
 
@@ -86,7 +91,7 @@ Third party sources used where:
 
 [Port](https://stackoverflow.com/questions/13475303/running-ssh-on-amazon-ec2-instance-on-port-other-than-22)
 [Postgres](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
-[redis](https://www.digitalocean.com/community/tutorials/how-to-install-redis-from-source-on-ubuntu-18-04)
+[Postgres2](https://vsupalov.com/flask-sqlalchemy-postgres/)
 [Firewall](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04)
 [ssh keys for grader](https://www.digitalocean.com/community/questions/ubuntu-16-04-creating-new-user-and-adding-ssh-keys)
 [timezone](https://linuxize.com/post/how-to-set-or-change-timezone-on-ubuntu-18-04/)
