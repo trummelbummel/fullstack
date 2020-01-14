@@ -19,15 +19,15 @@
 
   {% if loggedin == True%}
   <div class="topnav">
-  <p><a href=/items/new >New Item</a></p>
-  <p><a href=/category/all>All Categories</a></p>
-    <div class="button" id="category-signout"><a href=/logout/><label>Logout</label></a>
+  <p><a href=/catalog/items/new >New Item</a></p>
+  <p><a href=/catalog/category/all>All Categories</a></p>
+    <div class="button" id="category-signout"><a href=/catalog/logout/><label>Logout</label></a>
   </div>
   </div>
 
   {% else %}
   <div class="topnav">
-  <p><a href=/category/all>All Categories</a></p>
+  <p><a href=/catalog/category/all>All Categories</a></p>
   {% endif %}
 
   </div>
@@ -40,8 +40,8 @@
 
 
   {% if loggedin == True%}
-    <p><a href=/category/{{catid}}/item/{{item_id}}/edit/ >Edit</a></p>
-    <p><a href=/category/{{catid}}/item/{{item_id}}/delete/ >Delete</a></p>
+    <p><a href=/catalog/category/{{catid}}/item/{{item_id}}/edit/ >Edit</a></p>
+    <p><a href=/catalog/category/{{catid}}/item/{{item_id}}/delete/ >Delete</a></p>
   {% endif %}
 
      </div>

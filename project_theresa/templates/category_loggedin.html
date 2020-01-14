@@ -18,16 +18,16 @@
 {% if loggedin == False%}
 <!--/*make variable here */ -->
 <div class="topnav">
-        <p><a href=/category/all>All Categories</a></p>
-        <p><a href=/login/>Login</a></p>
+        <p><a href=/catalog/category/all>All Categories</a></p>
+        <p><a href=/catalog/login/>Login</a></p>
 </div>
 
 {% else %}
 
 <div class="topnav">
-    <p><a href=/items/new >New Item</a></p>
-    <p><a href=/category/all>All Categories</a></p>
-    <p><a href=/logout/>Logout</a></p>
+    <p><a href=/catalog/items/new >New Item</a></p>
+    <p><a href=/catalog/category/all>All Categories</a></p>
+    <p><a href=/catalog/logout/>Logout</a></p>
 </div>
 
 {% endif %}
@@ -41,7 +41,7 @@
 
 
 <div class="parent">
-    <h2><a href=/category/{{i.name}}/items/ >{{i.name}}</a></h2>
+    <h2><a href=/catalog/category/{{i.name}}/items/ >{{i.name}}</a></h2>
 </div>
 
 
@@ -61,7 +61,7 @@
 
     {% for x in items %}
     <div class="center-this">
-    <h2><a href=/category/{{catname}}/item/{{x.id}}/description/ >{{x.name}}</a></h2>
+    <h2><a href=/catalog/category/{{catname}}/item/{{x.id}}/description/ >{{x.name}}</a></h2>
     </div>
     {% endfor %}
 
@@ -73,7 +73,7 @@
 
     {% for x in latestitems %}
     <div class="center-this">
-        <h2><a href=/category/{{x[1].name}}/item/{{x[0].id}}/description/>{{x[0].name}} ({{x[1].name}})</a></h2>
+        <h2><a href=/catalog/category/{{x[1].name}}/item/{{x[0].id}}/description/>{{x[0].name}} ({{x[1].name}})</a></h2>
     </div>
 
 {% endfor %}
