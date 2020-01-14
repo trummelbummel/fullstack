@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 
 Base = declarative_base()
-engine = create_engine("postgresql+psycopg2://catalog:catalog@127.0.0.1:5432/itemcatalog")
+engine = create_engine("postgresql+psycopg2://<user>:<password>@127.0.0.1:5432/itemcatalog")
 
 
 class User(Base):

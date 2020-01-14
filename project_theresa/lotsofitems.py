@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 from database_setup import Category, Base, Item, User
 
-engine = create_engine('sqlite:///itemcatalog.db')
+engine = create_engine("postgresql+psycopg2://<user>:<password>@127.0.0.1:5432/itemcatalog")
 
 Base.metadata.bind = engine
 
@@ -80,4 +80,4 @@ session.commit()
 
 
 
-print "added  items!"
+print("added  items!")
