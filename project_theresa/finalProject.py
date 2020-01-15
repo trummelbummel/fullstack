@@ -15,7 +15,7 @@ from database_setup import Base, Category, Item, User
 app = Flask(__name__)
 
 # start database engine
-db_name = "postgresql+psycopg2://<user>:<password>@127.0.0.1:5432/itemcatalog"
+db_name = "postgresql+psycopg2://catalog:catalog@127.0.0.1:5432/itemcatalog"
 engine = create_engine(db_name)
 Base.metadata.bind = engine
 

@@ -22,7 +22,7 @@ logging.basicConfig(stream=sys.stderr)
 site.addsitedir('/home/ubuntu/.virtualenvs/appenv/lib/python3.6/site-packages')
 
 # add project directory to python path 
-sys.path.insert(0, '/var/www/catalog/catalog/') 
+sys.path.insert(0, '/var/www/fullstack/project_theresa/') 
 
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
