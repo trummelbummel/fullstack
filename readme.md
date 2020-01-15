@@ -8,6 +8,8 @@ Put the servers Public IPv4 address and route: `3.20.105.201/catalog/` in your b
 ssh -i <yourkey> -p 2200 grader@ec2-3-20-105-201.us-east-2.compute.amazonaws.com
 ```
 
+The password for grader is: grader
+
 ***Dependencies:***
 
 -apache2
