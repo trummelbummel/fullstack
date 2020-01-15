@@ -1,12 +1,11 @@
 
 # Readme Linux Server Configuration
-
 The port on which you can access the server is: 80
 SSH port is : 2200 
 Put the servers Public IPv4 address and route: `3.20.105.201/catalog/` in your browser to access the application.
 
 ```bash
-ssh -i <yourkey> -p 2200 <youruser>@ec2-3-20-105-201.us-east-2.compute.amazonaws.com
+ssh -i <yourkey> -p 2200 grader@ec2-3-20-105-201.us-east-2.compute.amazonaws.com
 ```
 
 ***Dependencies:***
@@ -29,18 +28,11 @@ ssh -i <yourkey> -p 2200 <youruser>@ec2-3-20-105-201.us-east-2.compute.amazonaws
 - bleach
 - requests
 - psycopg2-binary
-- flask-sqlalchemy
-
-
-ssh:
-ssh -i .ssh/AWS.pem ubuntu@ec2-3-134-118-107.us-east-2.compute.amazonaws.com
-
+- flask-sqlalchem
 **1. Dependencies**
 
 ```bash
 
-# connect to instance 
-ssh -i .ssh/AWS_fullstack.pem ubuntu@18.184.199.190
 
 # update package system
 sudo apt-get update
