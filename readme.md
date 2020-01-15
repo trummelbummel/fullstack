@@ -38,17 +38,24 @@ ssh -i <yourkey> -p 2200 grader@ec2-3-20-105-201.us-east-2.compute.amazonaws.com
 sudo apt-get update
 sudo apt-get upgrade
 
-# change port 
+# change port and change passwordlogin to no
 sudo vim /etc/ssh/sshd_config # change port in this file 
 sudo su - 
 sudo systemctl restart sshd 
 
+# change timezone
 sudo timedatectl set-timezone Europe/Berlin 
 
 
 # install postgresql system
 sudo apt-get install postgresql postgresql-contrib
 ```
+
+Furthermore configured ufw to:
+allow http, ssh, ntp 
+change ssh default port to 2200
+
+Made user grader and gave him sudo rights.
 
 ***2. Create user & initial setup***
 
@@ -78,6 +85,8 @@ pip3 install mod_wsgi
 pip3 install flask packaging oauth2client redis passlib flask-httpauth
 pip3 install sqlalchemy flask-sqlalchemy psycopg2-binary bleach requests
 ```
+
+Added an .httaccess file to avoid .git folder to be read from outside the server.
 
 Third party sources used where:
 
